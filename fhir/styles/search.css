@@ -1,125 +1,129 @@
+/* 基礎樣式 */
+
 body {
-    font-family: 'SimHei', sans-serif;
-    margin: 0;
-}
+    font-family: 'SimHei', sans-serif; /* 設定整體字體為微軟正黑，若無則降級使用 sans-serif 字體系列*/
+    margin: 0;  /* 移除預設的 body 邊界 */
+    }
+    
+    ul {
+    list-style-type: none; /* 移除清單前的項目符號 */
+    margin: 0;  /* 移除預設的 ul 邊界 */
+    padding: 0; /* 移除預設的 ul 內距 */
+    overflow: hidden; /* 清除 float 元素的影響(用於建立導覽列) */
+    background-color: #333; /* 導覽列背景色 */
+    }
+    
+    li {
+    float: left;  /* 浮動清單元素，使它們排列在一行 */
+    }
+    
+    li a {
+    display: block;  /* 將超連結元素變成區塊元素，可設定寬、高 */
+    color: white;   /* 文字顏色 */
+    text-align: center; /* 文字置中 */
+    padding: 14px 16px; /* 超連結區塊的內距 */
+    text-decoration: none; /* 移除超連結底線 */
+    }
+    
+    li a:hover:not(.active) {
+    background-color: #111; /* 滑鼠移上去時，非 active 元素的背景色 */
+    }
+    
+    .active {
+    background-color: #04AA6D; /* 目前選取中元素的背景色 */
+    }
+    
+    * {
+    box-sizing: border-box; /* 將邊界(border)和內距(padding)都包含在元素的寬度和高度中 */
+    }
+    
+    /* 搜尋框和表格式樣 */
+    .wrap {
+        display: flex; /* 設置為彈性容器，方便內容水平排列 */
+        margin-top: 20px; /* 上方增加間距 */
+        }
+        
+        #customers {
+        font-family: Arial, Helvetica, sans-serif; /* 表格字體 */
+        border-collapse: collapse; /* 合併單元格邊界為單一邊框 */
+        width: 100%; 
+        position: relative; 
+        bottom: 45px; /* 往下微調位置 */
+        margin-left: 20px; 
+        margin-right: 20px;
+        }
+        
+        #customers td,
+        #customers th {
+        border: none; /* 隱藏單元格邊框 */
+        padding: 8px; /* 單元格內距 */
+        }
+        
+        #customers tr {
+           border-bottom: 3px solid #04AA6D; /* 底部綠色分隔線 */
+        }
+        
+        #customers tr:nth-child(even) {
+        background-color: #efeded; /* 偶數表格列背景色 */
+        border-bottom: none; /* 取消偶數行底線 */
+        }
+        
+        #customers tr:hover {
+        background-color: #fffafa; /* 滑鼠移過列時背景色 */
+        }
+        
+        #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left; 
+        background-color: #ffffff; /* 表格標題背景色 */
+        color: rgb(0, 0, 0); /* 表格標題文字顏色 */
+        }
+        
+        .position {
+        position: relative; 
+        left: 30px; 
+        margin-bottom: 50px;  /* 調整與表格間距 */
+        }
+        
+        /* 搜尋、按鈕樣式 */
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
+        .search, .hospital-search {
+            margin-right: 10px; /* 調整右邊距，提供一些間距 */
+        }
 
-li {
-    float: left;
-}
+        .search-bar, .hospital-search-bar, .search-btn, .hospital-search-btn {
+            height: 35px;
+            font-size: 20px;
+        }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
+        .search-bar, .hospital-search-bar {
+            width: 200px;
+        }
 
-li a:hover:not(.active) {
-    background-color: #111;
-}
+        .search-btn, .hospital-search-btn {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 8px;
+            margin-left: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
 
-.active {
-    background-color: #04AA6D;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.wrap {
-    display: flex;
-    margin-top: 20px; /* 調整上邊距，將兩個搜尋框往下移動 */
-}
-
-#customers {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    position: relative;
-    bottom: 45px;
-    margin-left: 20px; /* 調整左邊距 */
-    margin-right: 20px; /* 調整右邊距 */
-}
-
-#customers td,
-#customers th {
-    border: none;
-    padding: 8px;
-}
-#customers tr {
-border-bottom: 3px solid #04AA6D; /* 底部綠色分隔線 */
-}
-
-#customers tr:nth-child(even) {
-    background-color: #efeded;
-    border-bottom: none;
-}
-
-#customers tr:hover {
-    background-color: #fffafa;
-}
-
-#customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-}
-
-.position {
-    position: relative;
-    left: 30px;
-    margin-bottom: 50px;
-    /* 调整与表格的间距 */
-}
-
-
-.search, .hospital-search {
-    margin-right: 10px; /* 調整右邊距，提供一些間距 */
-}
-
-.search-bar, .hospital-search-bar, .search-btn, .hospital-search-btn {
-    height: 35px;
-    font-size: 20px;
-}
-
-.search-bar, .hospital-search-bar {
-    width: 200px;
-}
-
-.search-btn, .hospital-search-btn {
-    background-color: #04AA6D;
-    border: none;
-    color: white;
-    padding: 8px;
-    margin-left: 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-.button1,
-.change {
-    background-color: #04AA6D;
-    border: none;
-    color: white;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-}
+        .button1,
+        .change {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
 .change {
     width: 60px;

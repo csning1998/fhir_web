@@ -17,7 +17,7 @@ function redirectToChangePage() {
           window.history.pushState({ searchValue: searchValue }, document.title, '?search=' + searchValue);
         }
       };
-      xhr.open("GET", "/php/batch.php?searchValue=" + searchValue, true);
+      xhr.open("GET", "./php/batch.php?searchValue=" + searchValue, true);
       xhr.send();
     });
   });
@@ -34,7 +34,7 @@ function redirectToChangePage() {
           updateTable(xhr.responseText);
         }
       };
-      xhr.open("GET", "/php/batch.php?searchValue=" + searchValue, true);
+      xhr.open("GET", "./php/batch.php?searchValue=" + searchValue, true);
       xhr.send();
     }
   });

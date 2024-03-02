@@ -8,7 +8,7 @@ function redirectToTargetPage() {
   
   // 使用方法
   
-  fetch('/php/fetch_data.php')
+  fetch('../php/fetch_data.php')
     .then(response => response.json())
     .then(data => {
       const fhirFormattedJSON = JSON.stringify(data, null, 2);

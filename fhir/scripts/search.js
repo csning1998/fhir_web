@@ -43,7 +43,7 @@ document.querySelector(".search-btn").addEventListener("click", function () {
             window.history.pushState({ searchValue: searchValue }, document.title, '?search=' + searchValue);
         }
     };
-    xhr.open("GET", "/php/search.php?searchValue=" + searchValue, true);
+    xhr.open("GET", "./php/search.php?searchValue=" + searchValue, true);
     xhr.send();
 });
 
@@ -59,7 +59,7 @@ xhr.onreadystatechange = function () {
         updateTable(xhr.responseText);
     }
 };
-xhr.open("GET", "/php/search.php?searchValue=" + searchValue, true);
+xhr.open("GET", "./php/search.php?searchValue=" + searchValue, true);
 xhr.send();
 }
 });
