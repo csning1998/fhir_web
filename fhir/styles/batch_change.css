@@ -1,0 +1,55 @@
+body {
+  font-family: 'SimHei', sans-serif;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+.login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form {
+  text-align: left;
+}
+
+#fhirData {
+  background-color: #DFF0D8; /* 淺綠色背景 */
+  padding: 10px; /* 加入一些內邊距 */
+}
+
+#jsonTitle {
+  text-align: center; /* 將 "JSON格式" 置中 */
+  margin-bottom: 10px; /* 添加一些底部間距 */
+}
+
+#fhirData pre {
+  font-size: 16px; /* 調整字體大小，可以根據需要調整 */
+}

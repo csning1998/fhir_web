@@ -1,0 +1,52 @@
+body {
+  background-image: url("images\backgroundSub.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+h1 {
+  color: black;
+  padding: 20px;
+  font-family: 'Microsoft JhengHei', 'Arial', sans-serif; /* 正黑體的名稱 */
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.login {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.form {
+  text-align: center;
+}

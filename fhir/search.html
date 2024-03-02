@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>藥物處方資訊查詢 - 單次</title>
+  <link rel="stylesheet" href="styles/search.css">
+</head>
+<body>
+  <header>
+    <ul>
+      <li><a class="active" href="#">FHIR交換平台</a></li>
+      <li><a href="home.html">首頁</a></li>
+      <li><a href="batch.html">藥物處方資訊查詢 - 批次</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="search">
+        <input class="search-bar" type="text" name="search" id="search" placeholder="輸入就醫序號">
+        <button class="search-btn">搜尋</button>
+      </div>
+
+      <div class="position">
+        <h1>查詢結果</h1>
+      </div>
+
+      <div class="table-container">
+        <table id="customers">
+          <tr>
+            <th></th>
+            <th>就醫序號</th>
+            <th>身分證字號</th>
+            <th>姓名</th>
+            <th>出生年月日</th>
+            <th>性別</th>
+            <th>所屬醫院</th>
+            <th></th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="fixed">
+      <button class="change" onclick="redirectToChangePage()">轉換</button>
+    </div>
+  </main>
+
+  <script src="scripts/search.js"></script>
+</body>
+</html>

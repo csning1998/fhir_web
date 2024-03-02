@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles/view_drug.css">
+  <script src="./fhir.js"></script>
+</head>
+
+<body>
+
+  <ul>
+    <li><a class="active" href="#home">FHIR交換平台</a></li>
+    <li><a href="home.html">首頁</a></li>
+    <li><a href="search.html">藥物處方資訊</a></li>
+  </ul>
+
+  <h2>用藥處方資訊</h2>
+  <hr style="border-color:rgb(0, 0, 0);">
+  <form action="">
+    <label for="patient_name">姓名:</label>
+    <span id="patient_name"></span>
+    <br><br>
+    <label for="IC_number">就醫序號:</label>
+    <span id="IC_number"></span>
+    <br><br>
+    <label for="patient_id">身分證字號:</label>
+    <span id="patient_id"></span>
+    <br><br>
+    <label for="doctor_id">看診醫生編號:</label>
+    <span id="doctor_id"></span>
+    <br><br>
+    <label for="record_date">紀錄日期:</label>
+    <span id="record_date"></span>
+    <br><br>
+    <label for="subject_description">主訴(S):</label>
+    <span id="subject_description"></span>
+    <br><br>
+    <label for="object_description">客觀描述(O):</label>
+    <span id="object_description"></span>
+    <br><br>
+    <label for="treatment_programs">治療方案(A):</label>
+    <span id="treatment_programs"></span>
+    <br><br>
+    <label for="icd-10">診斷碼(ICD-10):</label>
+    <span id="icd-10"></span>
+  </form>
+
+  <h3>藥物處方:</h3>
+  <table id="customers">
+    <thead>
+      <tr>
+        <th>藥品代碼</th>
+        <th>英文藥名</th>
+        <th>中文藥名</th>
+        <th>單位</th>
+        <th>用法</th>
+        <th>服用天數</th>
+        <th>總數</th>
+      </tr>
+    </thead>
+    <tbody id="drug-table-body">
+    </tbody>
+  </table>
+
+  <input class="change" type="button" onclick="window.location.href = 'search.html';" value="返回"></input>
+
+  <script src="scripts/view_drug.js"></script>
+
+</body>
+
+</html>

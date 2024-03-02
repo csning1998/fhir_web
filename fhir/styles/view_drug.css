@@ -1,0 +1,87 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #3D1101;
+}
+
+.wrap {
+  max-width: 2500px;
+  margin: 20px auto 0 auto;
+  height: auto;
+}
+
+.change {
+  background-color: #04AA6D;
+  /* Green */
+  border: none;
+  color: white;
+  border-radius: 16px;
+  width: 60px;
+  height: 35px;
+  top: 200px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.drug-table-container {
+  margin-top: 20px;
+}
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  position: relative;
+  bottom: 45px;
+  background-color: #ffffff; /* 設置為白色 */
+  color: rgb(0, 0, 0); /* 設置文字顏色為黑色 */
+}
+
+#customers th, #customers td {
+  text-align: center; /* 將文字置中 */
+  padding: 8px; /* 設置內邊距 */
+}
+
+#customers th {
+  background-color: #45a049;
+  color: rgb(255, 255, 255); /* 設置表頭背景色為深綠色 */
+}
+form  label{
+  font-weight: bold;
+  font-size: 20px; /* 加粗 */
+}
+form{
+  font-weight: bold; 
+}
+form span{
+  color: #474747;
+}

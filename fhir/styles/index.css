@@ -1,0 +1,87 @@
+body {
+  background-image: url("images\backgroundMain.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+h1 {
+  color: black;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  margin-left: 800px;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 70px;
+  width: 300px;
+  margin-right: auto;
+  margin-left: 950px;
+}
+
+.form {
+  text-align: center;
+  padding: 20px;
+  border: 3px solid rgb(20, 33, 94);
+  border-radius: 10px;
+  background-color: white;
+}
+
+.loginGroup {
+  margin-bottom: 10px;
+  text-align: left;
+  font-size: 20px;
+}
+
+.loginGroup input {
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+}  
+
+.btnAccess {
+  background-color: #04AA6D;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
