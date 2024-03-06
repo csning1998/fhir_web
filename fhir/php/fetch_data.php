@@ -1,49 +1,73 @@
 <?php
+
 // 連接到資料庫
+// 設定 MySQL 伺服器資訊
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "fhir";
-$port = "3306";  // 修改為你的 MySQL 伺服器端口號
+$port = "3306"; // 修改為你的 MySQL 伺服器端口號
 
+// 建立資料庫連線
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
+// 檢查連線是否成功
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// 假設以下的程式碼是從 view_drug.php 中提取的
+// 宣告變數
+// 存放第一個數據表的查詢結果
+$result1 = null;
+// 存放第二個數據表的查詢結果
+$result2 = null;
+// 存放第三個數據表的查詢結果
+$result3 = null;
+// 存放第一個數據表的資料
+$data1 = [];
+// 存放第二個數據表的資料
+$data2 = [];
+// 存放第三個數據表的資料
+$data3 = [];
+// 存放 MedicationRequest 資源的陣列
+$medicationRequests = [];
+// 存放 FHIR-style JSON 格式的資料
+$fhirData = [];
 
-// 查詢第一個數據表的數據（ medical_record 表）
+// 查詢第一個數據表的數據（medical_record 表）
+// 查詢條件：IC_number = 'A2255'
 $sql1 = "SELECT * FROM medical_record WHERE IC_number = 'A2255'";
 $result1 = $conn->query($sql1);
 
-// 查詢第二個數據表的數據（ icd_10 表）
-$sql2 = "SELECT ICD_code, ICD_name FROM icd_10 WHERE IC_number = 'A2255'";
-$result2 = $conn->query($sql2);
-
-// 查詢第三個數據表的數據（ drug 表）
-$sql3 = "SELECT drug_id, english_name, chinese_name, drug_unit, drug_usage, take_date, drug_total FROM drug WHERE IC_number = 'A2255'";
-$result3 = $conn->query($sql3);
-
-// 將查詢结果轉換為關聯數组
-$data1 = [];
-$data2 = [];
-$data3 = [];
-
+// 檢查查詢結果是否存在資料
 if ($result1->num_rows > 0) {
+    // 將查詢結果轉換為關聯數組
     $data1 = $result1->fetch_assoc();
 } else {
+    // 未找到相應的醫療紀錄
     echo "未找到相應的醫療紀錄";
 }
 
+// 查詢第二個數據表的數據（icd_10 表）
+// 查詢條件：IC_number = 'A2255'
+$sql2 = "SELECT ICD_code, ICD_name FROM icd_10 WHERE IC_number = 'A2255'";
+$result2 = $conn->query($sql2);
+
+// 檢查查詢結果是否存在資料
 if ($result2->num_rows > 0) {
+    // 將查詢結果轉換為關聯數組
     $data2 = $result2->fetch_assoc();
 } else {
-    
+    // 未找到相應的 ICD-10 數據
     echo "未找到相應的 ICD-10 數據";
 }
 
+// 查詢第三個數據表的數據（drug 表）
+// 查詢條件：IC_number = 'A2255'
+$sql3 = "SELECT drug_id, english_name, chinese_name, drug_unit, drug_usage, take_date, drug_total FROM drug WHERE IC_number = 'A2255'";
+$result3 = $conn->query($sql3);
+
+// 將查詢結果轉換為陣列
 while ($row = $result3->fetch_assoc()) {
     $data3[] = $row;
 }

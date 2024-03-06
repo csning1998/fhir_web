@@ -49,6 +49,7 @@ li a:hover:not(.active) {
   margin-left: 20px; /* 調整左邊距 */
   margin-right: 20px; /* 調整右邊距 */
 }
+
 #customers td{
   border: none;
   padding: 8px;

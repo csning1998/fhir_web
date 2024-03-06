@@ -144,3 +144,4 @@ foreach ($patients as $icNumber) {
 echo json_encode($allFhirData, JSON_PRETTY_PRINT);
 
 $conn->close();
+?>

@@ -39,7 +39,7 @@ document.querySelector(".search-btn").addEventListener("click", function () {
             // 處理後端返回的資料
             updateTable(xhr.responseText);
 
-            // 使用 pushState 存储搜索信息
+            // 使用 pushState 儲存搜索訊息
             window.history.pushState({ searchValue: searchValue }, document.title, '?search=' + searchValue);
         }
     };
